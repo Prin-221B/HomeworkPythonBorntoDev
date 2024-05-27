@@ -1,0 +1,15 @@
+def addNumber(x,y) :
+    print(x+y)
+def minusNum(x,y)  :
+    print(x-y)
+
+def MultiplyNum(x,y) :
+    print(x*y)
+
+def diviceNum(x,y) :
+    print(x/y)
+
+addNumber(2,4)
+minusNum(6,8)
+MultiplyNum(4,20)
+diviceNum(6,3)
