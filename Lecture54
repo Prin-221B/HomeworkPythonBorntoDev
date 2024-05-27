@@ -1,0 +1,37 @@
+def login() :
+    username = input("Username : ")
+    password = input("Password : ")
+    if username == "221B" and password == "nueyy.qtm":
+        return True
+    else :
+        return False
+
+def showMenu() :
+    print("----221B Shop---")
+    print("1.Vat calculator")
+    print("2.Price Calculator")
+
+def MenuSelect () :
+    userSelected = int(input("--->"))
+    return userSelected
+def vatCalculate(totalprice) :
+    vat = 7
+    result = totalprice + (totalprice * vat / 100)
+    return result
+def priceCalculate() :
+    price1 = float(input("Price (THB) :"))
+    price2 = float(input("Price (THB) :"))
+    return vatCalculate(price1+price2)
+
+if login() == True :
+    showMenu()
+    numMenu = MenuSelect()
+    if  numMenu == 1 :
+        totalprice = float(input("Total price : "))
+        print(vatCalculate(totalprice))
+
+    elif numMenu == 2 :
+        print(priceCalculate())
+
+else :
+    print('Username or Password worng ! ! ! 😰')
