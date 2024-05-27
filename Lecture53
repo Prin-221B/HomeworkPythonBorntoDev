@@ -1,0 +1,6 @@
+def vatcalculate() :
+    totalprice = int(input("Total price : "))
+    result = totalprice + (totalprice*7/100)
+    return result
+
+print(vatcalculate())
