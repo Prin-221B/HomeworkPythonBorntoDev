@@ -1,0 +1,44 @@
+from tkinter import *
+import math as m
+
+def leftClickButton() :
+    BMI = float(textboxWeigh.get())/m.pow(float(textboxHigh.get()/100,2))
+    print(BMI)
+    GreadeBMI(BMI)
+    
+def GreadeBMI (BMI) :
+    if BMI >= 30.0 :
+        labelBMI.configure( text = "Very FAT")
+    
+    elif BMI >= 25.0 :
+        labelBMI.configure(text="Fat")
+        
+    elif BMI >= 23.0 :
+        labelBMI.configure(text="Overweight")
+        
+    elif BMI >= 18.6 :
+        labelBMI.configure(text="Normal")
+        
+    elif BMI < 18.5 :
+        labelBMI.configure(text="Over Thin")
+
+    
+MainWindow = Tk()
+
+labelhight = Label(MainWindow, text = "ส่วนสูง (cm.)" )
+labelhight.grid(row = 0, colume = 0 )
+textboxHigh = Entry(MainWindow)
+textboxHigh.grid(row = 0,colum = 1)
+
+labelweight = (Label(MainWindow, text = "น้ำหนัก (Kg.)"))
+labelweight.grid(row = 1, colume = 0 )
+textboxWeigh = Entry(MainWindow)
+textboxWeigh.grid(row = 1, colume = 1)
+
+calculateButton = Button(MainWindow, text = "คำนวณ")
+calculateButton.bind('<Button-1>', leftClickButton)
+calculateButton.grid(row = 2, column = 0)
+
+labelBMI = Label(MainWindow, text = "BMI : ")
+labelBMI.grid(row = 2, column = 1)
+MainWindow.mainloop()
